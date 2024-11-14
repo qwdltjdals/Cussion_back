@@ -1,8 +1,6 @@
 spring:
   config:
     import: application-secret.yml
-
-spring:
   profiles:
     active: local
     group:
@@ -11,7 +9,7 @@ spring:
       green: green_server, common, secret
   mvc:
     pathmatch:
-      mating-strategy: ant_path_matcher
+      matching-strategy: ant_path_matcher
 
 ---
 
@@ -50,9 +48,10 @@ spring:
   config:
     activate:
       on-profile: common
+
 mybatis:
   mapper-locations:
-    - mappers/*.xml
+    - /mappers/*.xml
 
 user:
   profile:
@@ -62,4 +61,3 @@ user:
 logging:
   level:
     org.springframework.security: DEBUG
-
